@@ -3,14 +3,12 @@ import fragment from "./shader/fragment.glsl";
 import vertex from "./shader/vertexParticles.glsl";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GPUComputationRenderer } from 'three/examples/jsm/misc/GPUComputationRenderer.js';
-
+import * as dat from "dat.gui"   
+import fragmentSimulation from "./shader/fragmentSimulation.glsl";
 
 const WIDTH = 135;
 
-import fragment from "./shader/fragment.glsl";
-import vertex from "./shader/vertexParticles.glsl";
-import * as dat from "dat.gui"   
-import fragmentSimulation from "./shader/fragmentSimulation.glsl";
+
 
 export default class Sketch {
   constructor(options) {
