@@ -3,9 +3,7 @@ import fragment from "./shader/fragment.glsl";
 import vertex from "./shader/vertexParticles.glsl";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { GPUComputationRenderer } from 'three/examples/jsm/misc/GPUComputationRenderer.js';
-//import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-//import { GLTFLoader } from "gltfjsx/node_modules/three";
-//import face from '../face.glb';
+
 
 const WIDTH = 135;
 
@@ -24,7 +22,7 @@ export default class Sketch {
     this.renderer = new THREE.WebGLRenderer();
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(this.width, this.height);
-    this.renderer.setClearColor(0xeeeeee, 1); 
+    this.renderer.setClearColor(0x000000, 1); 
     this.renderer.outputEncoding = THREE.sRGBEncoding;
 
     this.container.appendChild(this.renderer.domElement);
@@ -132,6 +130,7 @@ export default class Sketch {
  
       // wireframe: true,
       // transparent: true,
+      blending:THREE.AdditiveBlending,
       vertexShader: vertex,
       fragmentShader: fragment
     });

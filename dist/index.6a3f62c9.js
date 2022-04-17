@@ -531,9 +531,6 @@ var _gpucomputationRendererJs = require("three/examples/jsm/misc/GPUComputationR
 var _datGui = require("dat.gui");
 var _fragmentSimulationGlsl = require("./shader/fragmentSimulation.glsl");
 var _fragmentSimulationGlslDefault = parcelHelpers.interopDefault(_fragmentSimulationGlsl);
-//import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-//import { GLTFLoader } from "gltfjsx/node_modules/three";
-//import face from '../face.glb';
 const WIDTH = 135;
 class Sketch {
     constructor(options){
@@ -544,7 +541,7 @@ class Sketch {
         this.renderer = new _three.WebGLRenderer();
         this.renderer.setPixelRatio(window.devicePixelRatio);
         this.renderer.setSize(this.width, this.height);
-        this.renderer.setClearColor(15658734, 1);
+        this.renderer.setClearColor(0, 1);
         this.renderer.outputEncoding = _three.sRGBEncoding;
         this.container.appendChild(this.renderer.domElement);
         //this.loader = new GLTFLoader();  
@@ -640,6 +637,7 @@ class Sketch {
             },
             // wireframe: true,
             // transparent: true,
+            blending: _three.AdditiveBlending,
             vertexShader: _vertexParticlesGlslDefault.default,
             fragmentShader: _fragmentGlslDefault.default
         });
@@ -30856,7 +30854,7 @@ exports.export = function(dest, destName, get) {
 };
 
 },{}],"02LUl":[function(require,module,exports) {
-module.exports = "#define GLSLIFY 1\nuniform float time;\nuniform float progress;\nuniform sampler2D texture1;\nuniform vec4 resolution;\nvarying vec2 vUv;\nvarying vec3 vPosition;\nfloat PI = 3.141592653589793238;\nvoid main()\t{\n\t// vec2 newUV = (vUv - vec2(0.5))*resolution.zw + vec2(0.5);\n\tgl_FragColor = vec4(0,0.0,0.,1.);\n}     ";
+module.exports = "#define GLSLIFY 1\nuniform float time;\nuniform float progress;\nuniform sampler2D texture1;\nuniform vec4 resolution;\nvarying vec2 vUv;\nvarying vec3 vPosition;\nfloat PI = 3.141592653589793238;\nvoid main()\t{\n\t// vec2 newUV = (vUv - vec2(0.5))*resolution.zw + vec2(0.5);\n\tgl_FragColor = vec4(1,1.1,1.,1.);\n}      ";
 
 },{}],"kGtKZ":[function(require,module,exports) {
 module.exports = "#define GLSLIFY 1\nuniform float time;\nvarying vec2 vUv;\nvarying vec3 vPosition;\nuniform sampler2D positionTexture;\nattribute vec2 reference;   \nfloat PI = 3.141592653589793238;\nvoid main() { \n  vUv = reference;\n  vec3 pos = texture(positionTexture, reference).xyz;\n  vec4 mvPosition = modelViewMatrix * vec4( pos, 2. );\n  gl_PointSize = 3. * ( 1. / - mvPosition.z );\n  gl_Position = projectionMatrix * mvPosition;\n}                 ";
