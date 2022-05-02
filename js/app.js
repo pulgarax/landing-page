@@ -189,6 +189,33 @@ export default class Sketch {
   }
 }
 
+//app.js kopieren mit shader in react project importieren
+
+//export class sketch
+
 new Sketch({
   dom: document.getElementById("container")
 });
+
+//hago un componente que la llamo start page..... da drin in den return habe ich ein leeres div. Auf dieses div hole ich mir das referenz
+//de esto ein react componen das rendert ein div
+//dann verwende ich ein ref über useRef Hook und hole ich mich ein referenz von diesen div
+//und von useEffecthook rufe ich das new Sketch auf
+//statt document getelemnt id benutze ich UseRef Current
+
+// const startPage = (props) => {
+//   const container = useRef()
+
+//   useEffect = (() => {
+//     if(container.current) {
+//       new Sketch({ dom: container.current })
+//     }
+//   }, []);
+
+//   return (
+//     <div ref={container} />
+//   );
+// }
+
+
+//dann rendere ich startPage als component

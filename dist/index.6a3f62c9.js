@@ -688,9 +688,27 @@ class Sketch {
     }
 }
 exports.default = Sketch;
+//app.js kopieren mit shader in react project importieren
+//export class sketch
 new Sketch({
     dom: document.getElementById("container")
-});
+}); //hago un componente que la llamo start page..... da drin in den return habe ich ein leeres div. Auf dieses div hole ich mir das referenz
+ //de esto ein react componen das rendert ein div
+ //dann verwende ich ein ref über useRef Hook und hole ich mich ein referenz von diesen div
+ //und von useEffecthook rufe ich das new Sketch auf
+ //statt document getelemnt id benutze ich UseRef Current
+ // const startPage = (props) => {
+ //   const container = useRef()
+ //   useEffect = (() => {
+ //     if(container.current) {
+ //       new Sketch({ dom: container.current })
+ //     }
+ //   }, []);
+ //   return (
+ //     <div ref={container} />
+ //   );
+ // }
+ //dann rendere ich startPage als component
 
 },{"./shader/fragment.glsl":"02LUl","./shader/vertexParticles.glsl":"kGtKZ","dat.gui":"k3xQk","./shader/fragmentSimulation.glsl":"5OZ10","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","three":"ktPTu","three/examples/jsm/controls/OrbitControls":"7mqRv","three/examples/jsm/misc/GPUComputationRenderer.js":"j0VzQ"}],"02LUl":[function(require,module,exports) {
 module.exports = "#define GLSLIFY 1\nuniform float time;\nuniform float progress;\nuniform sampler2D texture1;\nuniform vec4 resolution;\nvarying vec2 vUv;\nvarying vec3 vPosition;\nfloat PI = 3.141592653589793238;\nvoid main()\t{\n\t// vec2 newUV = (vUv - vec2(0.5))*resolution.zw + vec2(0.5);\n\tgl_FragColor = vec4(1,1.1,1.,1.);\n}      ";
